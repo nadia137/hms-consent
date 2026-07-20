@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="consent_form_report_document" inherit_id="tvs_consent_form.consent_form_report_document">
+        <xpath expr="//div[@name='sign_three']" position="inside">
+            <strong t-if="doc.physician_id.signature">Doctor Signature</strong><br/>
+            <img t-if="doc.physician_id.signature" t-att-src="image_data_uri(doc.physician_id.signature)" class="float-left" style="width: 225px;" alt="Signature"/><br/>
+            <span t-if="doc.physician_id" t-field="doc.physician_id.name"/><br/>
+        </xpath>
+    </template>
+
+</odoo>
